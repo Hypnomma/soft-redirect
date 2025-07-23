@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abrindo Links</title>
+  <style>
+    body {
+      background-color: #f7f9fc;
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .loader {
+      margin: 40px auto;
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #e0fc05;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      const base = "http://177.43.232.5:25123/helptools2/public/core/arquivo/download/id/";
+      const ids = [140, 17, 262, 340, 350, 220, 47, 222];
+      ids.forEach(id => window.open(base + id + "/", "_blank"));
+    };
+  </script>
+</head>
+<body>
+  <h1>Abrindo links...</h1>
+  <div class="loader"></div>
+  <p>Os arquivos de instalação estão sendo abertos em novas abas.</p>
+  <footer>Softcom - Redirecionamento automático</footer>
+</body>
+</html>
