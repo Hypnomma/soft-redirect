@@ -39,24 +39,57 @@
       100% { transform: rotate(360deg); }
     }
 
+    .warning {
+      color: red;
+      font-weight: bold;
+      margin-top: 30px;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #e0fc05;
+      border: none;
+      border-radius: 5px;
+    }
+
     footer {
       margin-top: 50px;
       font-size: 0.9em;
       color: #aaa;
     }
   </style>
-  <script>
-    window.onload = function () {
-      const base = "http://177.43.232.5:25123/helptools2/public/core/arquivo/download/id/";
-      const ids = [249, 140, 17, 262, 340, 350, 220, 47, 222];
-      ids.forEach(id => window.open(base + id + "/", "_blank"));
-    };
-  </script>
 </head>
 <body>
   <h1>Abrindo links...</h1>
   <div class="loader"></div>
   <p>Os arquivos de instalação estão sendo abertos em novas abas.</p>
+
+  <p class="warning">⚠️ ATIVE OS POP-UPS DO NAVEGADOR E RECARREGUE A PÁGINA! ⚠️</p>
+
+  <button onclick="abrirLinks()">Tentar abrir os links novamente</button>
+
   <footer>Softcom - Redirecionamento automático</footer>
+
+  <script>
+    const base = "http://177.43.232.5:25123/helptools2/public/core/arquivo/download/id/";
+    const ids = [249, 140, 17, 262, 340, 350, 220, 47, 222];
+
+    function abrirLinks() {
+      ids.forEach(id => {
+        window.open(base + id + "/", "_blank");
+      });
+    }
+
+    // Tenta abrir automaticamente na primeira vez
+    window.onload = abrirLinks;
+  </script>
 </body>
 </html>
